@@ -21,6 +21,10 @@ $_SESSION['cart']=array();
   <body>
     <div class="container">
       <div class="header">
+        <div class = "p-3  bg-warning text-dark font-italic">
+          <h2>Welcome to Online Cosmetic Products Shopping</h2>
+          <span class=" bg-warning text-dark font-italic">Find Your Perfect Look at the Best Price!</span>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="#"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,27 +33,33 @@ $_SESSION['cart']=array();
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span>
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+              <li class="nav-item active">
+              <a class="nav-link" href="#">About<span class="sr-only">(current)</span>
               </li>
               
              
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 mr-5 px-5 my-sm-0" type="submit">Search</button>
+              <button class="btn btn-outline-warning my-2 mr-5 px-5 my-sm-0" type="submit">Search</button>
 
-              <button class="btn btn-outline-success my-2 mx-2 my-sm-0" type="submit"><a href="checkout.php">Checkout</a> <span class="badge" id="totalCartItemCount"><?php if(isset($_SESSION['totalCartItemCount'])){echo $_SESSION['totalCartItemCount'];} ?></span></button>
+              <button class="btn btn-outline-warning my-2 mx-2 my-sm-0 " type="submit">
+                <a class=" text-warning text-decoration-none" href="checkout.php">Checkout</a><span class="" id="totalCartItemCount">
+                  <?php if(isset($_SESSION['totalCartItemCount'])){echo $_SESSION['totalCartItemCount'];} ?>
+                </span></button>
+                
               <?php if(isset($_SESSION['ISLOGIN'])) { ?>
-                <button class="btn btn-outline-success my-2 mx-2 my-sm-0" id="logout" onclick="logoutUser()" type="submit"><a href="#">Logout</a></button>
+                <button class="btn btn-outline-warning my-2 mx-2 my-sm-0 " id="logout" onclick="logoutUser()" type="submit">
+                <a class=" text-warning text-decoration-none" href="logout.php">Logout</a>
+              </button>
 
             <?php } else {?>
-              <button class="btn btn-outline-success my-2 mx-2 my-sm-0" id="login" type="submit"><a href="login.php">Login</a></button>
+              <button class="btn btn-outline-warning my-2 mx-2 my-sm-0" id="login" type="submit"><a href="login.php">Login</a></button>
             <?php }?>
-              <a href="register.php"><input type="button" value="Register" class="btn btn-outline-success my-2 mx-2 my-sm-0"></a>
+              <a href="register.php"><input type="button" value="Register" class="btn btn-outline-warning my-2 mx-2 my-sm-0"></a>
             </form>
           </div>
         </nav>
@@ -65,7 +75,7 @@ $_SESSION['cart']=array();
              <font color="#009900">Login Successful.</font>
        <?php } ?>
 
-        <img src="assets/images/banner.jpg" width="100%">
+        <img src="assets/images/banner1.jpg" width="100%">
         <div class="products py-4">
           <div class="row">
 
@@ -128,7 +138,7 @@ $_SESSION['cart']=array();
                 <div class="card-body">
                   <h4 class="card-title">John Doe</h4>
                   <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary stretched-link">Add to cart</a>
+                  <a href="#" class="btn btn-outline-warning stretched-link">Add to cart</a>
                 </div>
               </div>
             </div>
@@ -139,23 +149,23 @@ $_SESSION['cart']=array();
                 <div class="card-body">
                   <h4 class="card-title">John Doe</h4>
                   <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary stretched-link">Add to cart</a>
+                  <a href="#" class="btn btn-outline-warning stretched-link">Add to cart</a>
                 </div>
               </div>
             </div>
-
+ 
             <div class="col-md-3">
               <div class="card">
                 <img class="card-img-top" src="assets/images/laptop1.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
                   <h4 class="card-title">John Doe</h4>
                   <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                  <a href="#" class="btn btn-primary stretched-link">Add to cart</a>
+                  <a href="#" class="btn btn-outline-warning ">Add to cart</a>
                 </div>
               </div>
             </div>
- -->
 
+-->
 
           </div>
         </div>
@@ -181,7 +191,7 @@ $_SESSION['cart']=array();
    
    
 
-    if (confirm("Are you sure you want to logou?") == true) {
+    if (confirm("Are you sure you want to logout?") == true) {
 
     $.ajax({   
         type: "POST",

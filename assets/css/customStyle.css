@@ -19,3 +19,7 @@
   border-radius: 50%;
   background:#9ec8c6;
 }
+
+.container.header.top_text{
+  color: blueviolet;
+}

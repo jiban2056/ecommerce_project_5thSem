@@ -81,6 +81,6 @@ if(mysqli_query($dbConnect, $sql)){
 <?php
 
 unset($_SESSION["cart"])
-
-
- }?>
+  
+  
+ ;}?>
